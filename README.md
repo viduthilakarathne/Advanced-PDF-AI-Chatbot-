@@ -218,8 +218,7 @@ streamlit run app.py
 
 ### Embedding Model
 
-- Sentence Transformers
-- Hugging Face Transformers
+- Hugging Face Sentence Transformers(Generate Embeddings)
 
 ### Retrieval
 
