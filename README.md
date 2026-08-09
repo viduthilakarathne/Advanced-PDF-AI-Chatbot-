@@ -53,7 +53,8 @@ Unlike traditional chatbots, this system understands the content of uploaded doc
           Text Chunk Generation
                   │
                   ▼
- Sentence Transformer Embeddings
+ Hugging Face Sentence Transformers
+     (Generate Embeddings)
                   │
                   ▼
         Supabase Vector Storage
