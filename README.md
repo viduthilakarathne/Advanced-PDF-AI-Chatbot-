@@ -2,7 +2,7 @@
 
 An intelligent **Retrieval-Augmented Generation (RAG)** chatbot that allows users to upload PDF documents, ask natural language questions, and receive context-aware answers powered by Large Language Models (LLMs).
 
-The application combines **Groq LLMs**, **Sentence Transformers**, **Supabase Cloud**, and **Streamlit** to provide fast, accurate, and scalable document-based question answering.
+The application combines **Groq LLMs**, **Hugging Face Sentence Transformers (Generate Embeddings)**, **Supabase Cloud**, and **Streamlit** to provide fast, accurate, and scalable document-based question answering.
 
 ---
 
