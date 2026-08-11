@@ -8,7 +8,7 @@ The application combines **Groq LLMs**, **LangChain**, **FastAPI**, **Hugging Fa
 
 ## 📖 Overview
 
-The Advanced PDF AI Chatbot enables users to:
+This University Student Education Support AI Agent  enables users to:
 
 - 📄 Upload one or multiple PDF documents
 - 🧠 Automatically extract and process document text
