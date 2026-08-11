@@ -1,4 +1,4 @@
-# 🚀 Advanced AI Chatbot
+# 🚀 University Student Education Support AI Agent 
 
 An intelligent **Retrieval-Augmented Generation (RAG)** chatbot that allows users to upload PDF documents, ask natural language questions, and receive context-aware answers powered by Large Language Models (LLMs).
 
