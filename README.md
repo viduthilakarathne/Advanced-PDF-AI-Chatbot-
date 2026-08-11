@@ -38,39 +38,41 @@ Unlike traditional chatbots, this system understands the content of uploaded doc
 
 # 🏗️ System Architecture
 
-```
-                User
-                  │
-                  ▼
-          Streamlit Interface
-                  │
-        Upload PDF / Ask Question
-                  │
-                  ▼
-        PDF Text Extraction (PyPDF)
-                  │
-                  ▼
-          Text Chunk Generation
-                  │
-                  ▼
- Hugging Face Sentence Transformers
-     (Generate Embeddings)
-                  │
-                  ▼
-        Supabase Vector Storage
-                  │
-                  ▼
-     Retrieve Relevant Chunks (RAG)
-                  │
-                  ▼
-            Groq Large Language Model
-                  │
-                  ▼
-         AI Generated Answer
-                  │
-                  ▼
-                User
-```
+                   User
+                     │
+                     ▼
+         Streamlit Interface (hosted on AWS)
+                     │
+           Upload PDF / Ask Question
+                     │
+                     ▼
+              FastAPI Backend
+                     │
+                     ▼
+          PDF Text Extraction (PyPDF)
+                     │
+                     ▼
+            Text Chunk Generation
+                     │
+                     ▼
+     Hugging Face Sentence Transformers
+         (Generate Embeddings)
+                     │
+                     ▼
+           Supabase Vector Storage
+                     │
+                     ▼
+      Retrieve Relevant Chunks (RAG)
+           — orchestrated via LangChain —
+                     │
+                     ▼
+         Groq Large Language Model
+                     │
+                     ▼
+          AI Generated Answer
+                     │
+                     ▼
+                    User
 
 ---
 
