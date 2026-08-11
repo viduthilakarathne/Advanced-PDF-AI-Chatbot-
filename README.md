@@ -2,7 +2,7 @@
 
 An intelligent **Retrieval-Augmented Generation (RAG)** chatbot that allows users to upload PDF documents, ask natural language questions, and receive context-aware answers powered by Large Language Models (LLMs).
 
-The application combines **Groq LLMs**, **Hugging Face Sentence Transformers (Generate Embeddings)**, **Supabase Cloud**, and **Streamlit** to provide fast, accurate, and scalable document-based question answering.
+The application combines **Groq LLMs**, **LangChain**, **FastAPI**, **Hugging Face Sentence Transformers (Generate Embeddings)**, **Supabase Cloud**, **AWS**, and **Streamlit** to provide fast, accurate, and scalable document-based question answering.
 
 ---
 
@@ -17,6 +17,8 @@ The Advanced PDF AI Chatbot enables users to:
 - 💬 Ask questions in natural language
 - 🤖 Receive AI-generated answers grounded in uploaded documents
 - ⚡ Deliver real-time responses using Groq's high-speed inference
+- 🔗 Orchestrate retrieval and generation through a LangChain pipeline
+- ☁️ Run on a FastAPI backend, deployed on AWS
 
 Unlike traditional chatbots, this system understands the content of uploaded documents and generates responses based on document context rather than relying solely on the language model's knowledge.
 
@@ -28,9 +30,12 @@ Unlike traditional chatbots, this system understands the content of uploaded doc
 - 🧠 Automatic Text Extraction
 - ✂️ Intelligent Text Chunking
 - 🔎 Semantic Search using Sentence Transformers
+- 🔗 RAG Pipeline Orchestration with LangChain
+- ⚙️ FastAPI Backend for Retrieval and Inference Requests
 - 🤖 Context-Aware AI Responses
 - ☁️ Cloud Storage with Supabase
 - ⚡ Ultra-fast LLM Inference using Groq
+- ☁️ Cloud Deployment on AWS
 - 🎨 Clean Streamlit User Interface
 - 🔐 Secure API Key Management using Environment Variables
 
@@ -38,6 +43,7 @@ Unlike traditional chatbots, this system understands the content of uploaded doc
 
 # 🏗️ System Architecture
 
+```
                    User
                      │
                      ▼
@@ -73,6 +79,7 @@ Unlike traditional chatbots, this system understands the content of uploaded doc
                      │
                      ▼
                     User
+```
 
 ---
 
@@ -85,6 +92,14 @@ Unlike traditional chatbots, this system understands the content of uploaded doc
 ## Frontend
 
 - Streamlit
+
+## Backend
+
+- FastAPI
+
+## Orchestration
+
+- LangChain
 
 ## Large Language Model
 
@@ -102,6 +117,10 @@ Unlike traditional chatbots, this system understands the content of uploaded doc
 ## Cloud Database
 
 - Supabase
+
+## Cloud Hosting / Deployment
+
+- AWS
 
 ## Environment Management
 
@@ -192,6 +211,10 @@ SUPABASE_KEY=YOUR_SUPABASE_KEY
 ## 5 Run the Application
 
 ```bash
+# Start the FastAPI backend
+uvicorn main:app --reload
+
+# In a separate terminal, start the Streamlit frontend
 streamlit run app.py
 ```
 
@@ -199,15 +222,17 @@ streamlit run app.py
 
 # 🔄 Workflow
 
-1. User uploads one or multiple PDF files.
-2. PDF text is extracted automatically.
-3. Text is split into meaningful chunks.
-4. Sentence Transformers generate embeddings.
-5. Embeddings and document metadata are stored in Supabase.
-6. User asks a question.
-7. Relevant document chunks are retrieved.
-8. Retrieved context is sent to the Groq LLM.
-9. The chatbot generates a context-aware response.
+1. User uploads one or multiple PDF files via the Streamlit interface.
+2. The request is routed through the FastAPI backend.
+3. PDF text is extracted automatically using PyPDF.
+4. Text is split into meaningful chunks.
+5. Sentence Transformers generate embeddings.
+6. Embeddings and document metadata are stored in Supabase.
+7. User asks a question.
+8. LangChain orchestrates retrieval of relevant document chunks.
+9. Retrieved context is sent to the Groq LLM.
+10. The chatbot generates a context-aware response.
+11. The application is deployed and hosted on AWS for real-time access.
 
 ---
 
@@ -220,11 +245,16 @@ streamlit run app.py
 
 ### Embedding Model
 
-- Hugging Face Sentence Transformers(Generate Embeddings)
+- Hugging Face Sentence Transformers (Generate Embeddings)
 
-### Retrieval
+### Retrieval Orchestration
 
+- LangChain
 - Semantic Similarity Search
+
+### Backend
+
+- FastAPI
 
 ### Large Language Model
 
@@ -234,6 +264,10 @@ streamlit run app.py
 ### Database
 
 - Supabase
+
+### Cloud Deployment
+
+- AWS
 
 ### User Interface
 
@@ -265,7 +299,10 @@ This project demonstrates practical experience with:
 - Natural Language Processing (NLP)
 - Semantic Search
 - Vector Embeddings
+- LangChain Pipeline Orchestration
+- FastAPI Backend Development
 - Cloud Database Integration
+- Cloud Deployment (AWS)
 - Streamlit Application Development
 - API Integration
 - Prompt Engineering
@@ -279,8 +316,10 @@ Through this project, I gained hands-on experience in:
 
 - Building production-style AI applications
 - Working with Large Language Models
-- Implementing Retrieval-Augmented Generation pipelines
+- Implementing Retrieval-Augmented Generation pipelines with LangChain
+- Building and serving a FastAPI backend
 - Cloud storage integration with Supabase
+- Deploying and hosting AI applications on AWS
 - Deploying interactive AI applications with Streamlit
 - Managing vector embeddings for semantic search
 - Integrating external AI APIs
